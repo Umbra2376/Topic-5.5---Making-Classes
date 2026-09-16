@@ -29,7 +29,7 @@ namespace Topic_5._5___Making_Classes
             else if (die1.Roll == 1 && die2.Roll == 1)
                 Console.WriteLine("You rolled snake eyes!");
             else if (sum % 2 == 0)
-                Console.WriteLine("You rolled an even number!");
+                Console.WriteLine("You rolled an even sum");
             if (die1.Roll > die2.Roll)
                 Console.WriteLine("Die 1 is greater than Die 2");
             else if (die1.Roll < die2.Roll)

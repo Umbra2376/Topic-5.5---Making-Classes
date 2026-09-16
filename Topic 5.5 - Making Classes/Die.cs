@@ -10,7 +10,7 @@ namespace Topic_5._5___Making_Classes
     {
         private int _sides;
         private int _roll;
-        private Random _generator;
+        private static Random _generator;
 
         public Die()
         {
@@ -79,11 +79,13 @@ namespace Topic_5._5___Making_Classes
             }
             else if (_roll == 5)
             {
+                Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.WriteLine("-----");
                 Console.WriteLine("|o o|");
                 Console.WriteLine("| o |");
                 Console.WriteLine("|o o|");
                 Console.WriteLine("-----");
+                Console.ForegroundColor = ConsoleColor.White;
             }
             else if (_roll == 6)
             {
