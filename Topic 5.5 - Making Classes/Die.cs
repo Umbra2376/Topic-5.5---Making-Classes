@@ -11,18 +11,25 @@ namespace Topic_5._5___Making_Classes
         private int _sides;
         private int _roll;
         private static Random _generator;
-
+        private ConsoleColor _color;
         public Die()
         {
             _sides = 6;
             _generator = new Random();
             _roll = _generator.Next(1, _sides + 1);
+            _color = ConsoleColor.Gray;
         }
 
         //Accessor Properties
         public int Roll
         {
             get { return _roll; }
+        }
+
+        public ConsoleColor Color
+        {
+            get { return _color; }
+            set { _color = value; }
         }
 
         public override string ToString()
@@ -36,56 +43,48 @@ namespace Topic_5._5___Making_Classes
         }
         public void DrawRoll()
         {
+            ConsoleColor _currentForecolor = Console.ForegroundColor;
+            Console.ForegroundColor = _color;
             if (_roll == 1)
             {
-                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("-----");
                 Console.WriteLine("|   |");
                 Console.WriteLine("| o |");
                 Console.WriteLine("|   |");
                 Console.WriteLine("-----");
-                Console.ForegroundColor = ConsoleColor.White;
             }
             else if (_roll == 2)
             {
-                Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("-----");
                 Console.WriteLine("|o  |");
                 Console.WriteLine("|   |");
                 Console.WriteLine("|  o|");
                 Console.WriteLine("-----");
-                Console.ForegroundColor = ConsoleColor.White;
             }
 
             else if (_roll == 3)
             {
-                Console.ForegroundColor = ConsoleColor.Blue;
                 Console.WriteLine("-----");
                 Console.WriteLine("|o  |");
                 Console.WriteLine("| o |");
                 Console.WriteLine("|  o|");
                 Console.WriteLine("-----");
-                Console.ForegroundColor = ConsoleColor.White;
             }
             else if (_roll == 4)
             {
-                Console.ForegroundColor = ConsoleColor.Magenta;
                 Console.WriteLine("-----");
                 Console.WriteLine("|o o|");
                 Console.WriteLine("|   |");
                 Console.WriteLine("|o o|");
                 Console.WriteLine("-----");
-                Console.ForegroundColor = ConsoleColor.White;
             }
             else if (_roll == 5)
             {
-                Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.WriteLine("-----");
                 Console.WriteLine("|o o|");
                 Console.WriteLine("| o |");
                 Console.WriteLine("|o o|");
                 Console.WriteLine("-----");
-                Console.ForegroundColor = ConsoleColor.White;
             }
             else if (_roll == 6)
             {
@@ -95,14 +94,7 @@ namespace Topic_5._5___Making_Classes
                 Console.WriteLine("|o o|");
                 Console.WriteLine("-----");
             }
-            else
-            {
-                Console.WriteLine("-----");
-                Console.WriteLine("|   |");
-                Console.WriteLine("| ? |");
-                Console.WriteLine("|   |");
-                Console.WriteLine("-----");
-            }
+            Console.ForegroundColor = _currentForecolor;
         }
     }
 }

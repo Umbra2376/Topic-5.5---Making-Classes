@@ -13,7 +13,10 @@ namespace Topic_5._5___Making_Classes
         {
             Die die1 = new Die();
             Die die2 = new Die();
-
+            Console.WriteLine("What color would you like Die 1 to be? (Red, Green, Blue, Yellow, Magenta, Cyan)");
+            die1.Color = (ConsoleColor)Enum.Parse(typeof(ConsoleColor), Console.ReadLine(), true);
+            Console.WriteLine("What color would you like Die 2 to be? (Red, Green, Blue, Yellow, Magenta, Cyan)");
+            die2.Color = (ConsoleColor)Enum.Parse(typeof(ConsoleColor), Console.ReadLine(), true);
             die1.RollDie();
             die1.DrawRoll();
             die2.RollDie();
